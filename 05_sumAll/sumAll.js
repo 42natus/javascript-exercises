@@ -1,28 +1,29 @@
 const sumAll = function(beginInteger, endInteger) {
     const allIntegers = [];
     let sum = 0;
-    let i = 1;
 
-    let end, begin;
-
-    if (beginInteger > endInteger) {
-        end = beginInteger;
-        begin = endInteger;
-    } else {
-        begin = beginInteger;
-        end = endInteger;
+    if (beginInteger < 0 || endInteger < 0) {
+        return "ERROR";
+    } else if (!(Number.isInteger(beginInteger) && Number.isInteger(endInteger))) {
+        return "ERROR";
     }
 
-    allIntegers[0] = parseInt(begin);
+    // Work whether or not the larger number is the first argument
+    let begin = (beginInteger < endInteger) ? beginInteger : endInteger;
+    let end = (beginInteger < endInteger) ? endInteger : beginInteger;
+
+    allIntegers[0] = begin;
     
     nextNumber = ++begin;
+
+    let i = 1;
 
     let control = true;
 
     while (control) {
         allIntegers[i] = nextNumber;
-
-        if (nextNumber == parseInt(end)) {
+        
+        if (nextNumber == end) {
             control = false;
         }
 
