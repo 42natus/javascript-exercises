@@ -1,19 +1,19 @@
-const convertToCelsius = function(fahrenheitTemp) {
-  const fahrenheitToCelsius = (fahrenheitTemp - 32) * (5/9);
+const convertToCelsius = function(fahrenheit) {
+  const FAHRENHEIT_TO_CELSIUS = (fahrenheit - 32) * (5/9);
 
-  const roundedFahrenheitToCelsius = Math.round(fahrenheitToCelsius * 10) / 10;
+  const roundedValue = Math.round(FAHRENHEIT_TO_CELSIUS * 10) / 10;
 
-  const result = parseFloat(roundedFahrenheitToCelsius.toFixed(1));
+  const result = parseFloat(roundedValue.toFixed(1));
 
   return result;
 };
 
-const convertToFahrenheit = function(celsiusTemp) {
-  const celsiusToFahrenheit = (celsiusTemp * (9/5) + 32);
+const convertToFahrenheit = function(celsius) {
+  const CELSIUS_TO_FAHRENHEIT = (celsius * (9/5) + 32);
 
-  const roundedCelsiusToFahrenheit = Math.round(celsiusToFahrenheit * 10) / 10;
+  const roundedValue = Math.round(CELSIUS_TO_FAHRENHEIT * 10) / 10;
 
-  const result = parseFloat(roundedCelsiusToFahrenheit.toFixed(1));
+  const result = parseFloat(roundedValue.toFixed(1));
 
   return result;
 };
