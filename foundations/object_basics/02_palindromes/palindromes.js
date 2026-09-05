@@ -1,6 +1,7 @@
 const palindromes = function (str) {
     const chars = str.split("");
     const alphaNum = chars.filter(char => isAlphaNum(char));
+    return alphaNum.join("").toLowerCase() === alphaNum.slice().reverse().join("").toLowerCase();
 };
 
 function isAlphaNum(character) {
